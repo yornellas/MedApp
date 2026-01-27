@@ -1,0 +1,15 @@
+import { express } from 'express';
+import { pkg } from 'body-parser';
+import { router } from './router/router.js';
+
+const app = express();
+const { json, urlencoded } = pkg;
+
+app.use(json());
+app.use(urlencoded({ extended: true }));
+
+app.listen(3000, function() {
+  console.log('Listen to port 3000')
+});
+
+app.use('/', router);

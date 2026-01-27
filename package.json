@@ -1,0 +1,14 @@
+{
+  "name": "medapp",
+  "version": "1.0.0",
+  "description": "Mini projeto - Disciplina Programacao II",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yolanda Ornellas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
