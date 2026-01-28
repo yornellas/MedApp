@@ -28,6 +28,6 @@ const prescriptionSchema = new Schema({
   }
 });
 
-const appointment = mongoose.model('Prescription', prescriptionSchema);
+const Prescription = mongoose.model('Prescription', prescriptionSchema);
 
-export default prescription;
+export default Prescription;

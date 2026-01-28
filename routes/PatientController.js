@@ -1,5 +1,65 @@
-import { express } from 'express'
+import { express } from 'express';
+import { PatientService } from '../services/PatientService';
 
 let router = express.Router();
+
+router.get('/patients', async(req, res) => {
+  try {
+    const patients = await PatientService.getPatients();
+    res.send(patients);
+  } catch (error) {
+    console.log(error)
+    res.status(500).send(error)
+  }
+})
+
+router.get('/getPatient/:id', async(req, res) => {
+  const { id } = req.params;
+
+  try {
+    const patient = await PatientService.getPatientById(id);
+    res.send(patient);
+  } catch (error) {
+    console.log(error)
+    res.status(500).send(error)
+  }
+})
+
+router.post('/postPatient', async(req, res) => {
+  const { name, birthDate, email, phone } = req.body;
+
+  try {
+    const patient = await PatientService.savePatient({ name, birthDate, email, phone });
+    res.send(patient);
+  } catch (error) {
+    console.log(error)
+    res.status(500).send(error)
+  }
+})
+
+router.put('/patients/:id', async(req, res) => {
+  const { id } = req.params;
+  const { name, birthDate, email, phone } = req.body;
+
+  try {
+    const patient = await PatientService.updatePatient(id, { name, birthDate, email, phone });
+    res.send(patient);
+  } catch (error) {
+    console.log(error)
+    res.status(500).send(error)
+  }
+})
+
+router.delete('/patients/:id', async(req, res) => {
+  const { id } = req.params;
+
+  try {
+    const patient = await PatientService.updatePatient(id);
+    res.send(patient);
+  } catch (error) {
+    console.log(error)
+    res.status(500).send(error)
+  }
+})
 
 export default router();
