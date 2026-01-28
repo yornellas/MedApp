@@ -1,5 +1,5 @@
-const patientController = {
+import { express } from 'express'
 
-}
+let router = express.Router();
 
-export default patientController;
+export default router();
