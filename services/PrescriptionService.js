@@ -1,4 +1,4 @@
-import { PrescriptionRepository } from '../repositories/PrescriptionRepository';
+import PrescriptionRepository from '../repositories/PrescriptionRepository.js';
 
 const getPrescriptions = async () => {
   return PrescriptionRepository.getPrescriptions();

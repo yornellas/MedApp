@@ -1,5 +1,5 @@
-import { express } from 'express';
-import { DoctorService } from '../services/DoctorService.js';
+import express from 'express';
+import DoctorService from '../services/DoctorService.js';
 
 let router = express.Router();
 
@@ -17,7 +17,7 @@ router.get('/getDoctor/:id', async(req, res) => {
   const { id } = req.params;
 
   try {
-    const doctor = await DoctorService.getDoctorbyId(id);
+    const doctor = await DoctorService.getDoctorById(id);
     res.send(doctor);
   } catch (error) {
     console.log(error)
@@ -29,7 +29,7 @@ router.post('/postDoctor', async(req, res) => {
   const { name, login, password, email, phone, medicalRegistration, medicalSpecialty } = req.body;
 
   try {
-    const doctor = await DoctorService.postDoctor({ name, login, password, email, phone, medicalRegistration, medicalSpecialty });
+    const doctor = await DoctorService.saveDoctor({ name, login, password, email, phone, medicalRegistration, medicalSpecialty });
     res.send(doctor);
   } catch (error) {
     console.log(error)
@@ -54,7 +54,7 @@ router.delete('/doctors/:id', async(req, res) => {
   const { id } = req.params;
 
   try {
-    const doctor = await AppointmentService.updateAppointment(id);
+    const doctor = await DoctorService.deleteDoctor(id);
     res.send(doctor);
   } catch (error) {
     console.log(error)
@@ -62,4 +62,4 @@ router.delete('/doctors/:id', async(req, res) => {
   }
 })
 
-export default router();
+export default router;
