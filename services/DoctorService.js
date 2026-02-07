@@ -1,23 +1,58 @@
-import DoctorRepository from '../repositories/DoctorRepository.js';
+import DoctorRepository from '../repositories/DoctorRepository.js'
 
 const getDoctors = async () => {
-  return DoctorRepository.getDoctors();
+  return DoctorRepository.getDoctors()
 }
 
 const getDoctorById = async (id) => {
-  return DoctorRepository.getDoctorById(id);
+  return DoctorRepository.getDoctorById(id)
 }
 
-const saveDoctor = async ({ name, login, password, email, phone, medicalRegistration, medicalSpecialty }) => {
-  return DoctorRepository.saveDoctor({ name, login, password, email, phone, medicalRegistration, medicalSpecialty });
+const saveDoctor = async ({
+  name,
+  login,
+  password,
+  email,
+  phone,
+  medicalRegistration,
+  medicalSpecialty,
+}) => {
+  return DoctorRepository.saveDoctor({
+    name,
+    login,
+    password,
+    email,
+    phone,
+    medicalRegistration,
+    medicalSpecialty,
+  })
 }
 
-const updateDoctor = async (id, { name, login, password, email, phone, medicalRegistration, medicalSpecialty }) => {
-  return DoctorRepository.updateDoctor(id, { name, login, password, email, phone, medicalRegistration, medicalSpecialty });
+const updateDoctor = async (
+  id,
+  {
+    name,
+    login,
+    password,
+    email,
+    phone,
+    medicalRegistration,
+    medicalSpecialty,
+  },
+) => {
+  return DoctorRepository.updateDoctor(id, {
+    name,
+    login,
+    password,
+    email,
+    phone,
+    medicalRegistration,
+    medicalSpecialty,
+  })
 }
 
 const deleteDoctor = async (id) => {
-  return DoctorRepository.deleteDoctor(id);
+  return DoctorRepository.deleteDoctor(id)
 }
 
 const DoctorService = {
@@ -25,7 +60,7 @@ const DoctorService = {
   getDoctorById,
   saveDoctor,
   updateDoctor,
-  deleteDoctor
+  deleteDoctor,
 }
 
-export default DoctorService;
+export default DoctorService

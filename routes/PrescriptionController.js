@@ -1,6 +1,5 @@
 import express from 'express'
 import PrescriptionService from '../services/PrescriptionService.js'
-import bycript from 'bcryptjs'
 
 let router = express.Router()
 
@@ -30,7 +29,6 @@ router.post('/postPrescription', async (req, res) => {
   const { date, appointmentId, medicine, dosage, instructions } = req.body
 
   try {
-    const hashedPassword = await bycript.hash(password, 10)
     const prescription = await PrescriptionService.savePrescription({
       date,
       appointmentId,

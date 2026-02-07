@@ -1,23 +1,44 @@
-import PrescriptionRepository from '../repositories/PrescriptionRepository.js';
+import PrescriptionRepository from '../repositories/PrescriptionRepository.js'
 
 const getPrescriptions = async () => {
-  return PrescriptionRepository.getPrescriptions();
+  return PrescriptionRepository.getPrescriptions()
 }
 
 const getPrescriptionById = async (id) => {
-  return PrescriptionRepository.getPrescriptionById(id);
+  return PrescriptionRepository.getPrescriptionById(id)
 }
 
-const savePrescription = async ({ date, appointmentId, medicine, dosage, instructions }) => {
-  return PrescriptionRepository.savePrescription({ date, appointmentId, medicine, dosage, instructions });
+const savePrescription = async ({
+  date,
+  appointmentId,
+  medicine,
+  dosage,
+  instructions,
+}) => {
+  return PrescriptionRepository.savePrescription({
+    date,
+    appointmentId,
+    medicine,
+    dosage,
+    instructions,
+  })
 }
 
-const updatePrescription = async (id, { date, appointmentId, medicine, dosage, instructions }) => {
-  return PrescriptionRepository.updatePrescription(id, { date, appointmentId, medicine, dosage, instructions });
+const updatePrescription = async (
+  id,
+  { date, appointmentId, medicine, dosage, instructions },
+) => {
+  return PrescriptionRepository.updatePrescription(id, {
+    date,
+    appointmentId,
+    medicine,
+    dosage,
+    instructions,
+  })
 }
 
 const deletePrescription = async (id) => {
-  return PrescriptionRepository.deleteAppointment(id);
+  return PrescriptionRepository.deleteAppointment(id)
 }
 
 const PrescriptionService = {
@@ -25,7 +46,7 @@ const PrescriptionService = {
   getPrescriptionById,
   savePrescription,
   updatePrescription,
-  deletePrescription
+  deletePrescription,
 }
 
-export default PrescriptionService;
+export default PrescriptionService
