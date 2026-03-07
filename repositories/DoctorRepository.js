@@ -76,12 +76,22 @@ const deleteDoctor = async (id) => {
   }
 }
 
+const getDoctorbyLogin = async (login) => {
+  try {
+    return await Doctor.findOne({ 'login': login })
+  } catch (error) {
+    throw new Error(error)
+    
+  }
+}
+
 const DoctorRepository = {
   getDoctors,
   getDoctorById,
   saveDoctor,
   updateDoctor,
   deleteDoctor,
+  getDoctorbyLogin
 }
 
 export default DoctorRepository

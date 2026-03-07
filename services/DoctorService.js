@@ -55,12 +55,17 @@ const deleteDoctor = async (id) => {
   return DoctorRepository.deleteDoctor(id)
 }
 
+const getDoctorbyLogin = async (login) => {
+  return await DoctorRepository.getDoctorbyLogin(login)
+}
+
 const DoctorService = {
   getDoctors,
   getDoctorById,
   saveDoctor,
   updateDoctor,
   deleteDoctor,
+  getDoctorbyLogin,
 }
 
 export default DoctorService
